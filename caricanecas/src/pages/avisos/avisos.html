@@ -1,0 +1,72 @@
+<ion-content style="margin-top: 56px" class="list-avatar-page">
+	<!--<ion-content style="background: url('https://www.scp.caricanecas.com.br/public/modules/globais/franqueado/img/login_bg.gif'); margin-top: 56px; height: 890px">-->
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+			pullingIcon="arrow-dropdown"
+			pullingText="Puxe para atualizar"
+			refreshingSpinner="circles"
+			refreshingText="Estamos atualizando...">
+		</ion-refresher-content>
+	</ion-refresher>
+
+	<ion-scroll scrollY="true" class="scroll-page">
+		<!-- HOJE -->
+		<ion-list *ngIf="avisos_hoje?.length > 0" >
+			<ion-list-header > HOJE</ion-list-header>
+			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let hoje of avisos_hoje; let i = index">
+				<ion-avatar item-start>
+					<img src="{{hoje.avi_imagem}}">
+				</ion-avatar>
+				<h2>{{hoje.avi_assunto}}</h2>
+				<p>{{hoje.avi_mensagem}}</p>
+				<ion-note item-end>{{hoje.avi_datacadastral}}</ion-note>
+			</button>
+		</ion-list>
+
+		<!-- ONTEM -->
+		<ion-list *ngIf="avisos_ontem?.length > 0" >
+			<ion-list-header > ONTEM</ion-list-header>
+
+			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let ontem of avisos_ontem; let i = index">
+				<ion-avatar item-start>
+					<img src="{{ontem.avi_imagem}}">
+				</ion-avatar>
+				<h2>{{ontem.avi_assunto}}</h2>
+				<p>{{ontem.avi_mensagem}}</p>
+				<ion-note item-end>{{ontem.avi_datacadastral}}</ion-note>
+			</button>
+
+		</ion-list>
+
+		<!-- ÚLTIMOS SETE DIAS -->
+		<ion-list *ngIf="avisos_sete_dias?.length > 0" >
+			<ion-list-header > ÚLTIMOS SETE DIAS</ion-list-header>
+
+			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let sete_dias of avisos_sete_dias; let i = index">
+				<ion-avatar item-start>
+					<img src="{{sete_dias.avi_imagem}}">
+				</ion-avatar>
+				<h2>{{sete_dias.avi_assunto}}</h2>
+				<p>{{sete_dias.avi_mensagem}}</p>
+				<ion-note item-end>{{sete_dias.avi_datacadastral}}</ion-note>
+			</button>
+		</ion-list>
+
+		<!-- A MAIS DE SETE DIAS -->
+
+		<ion-list *ngIf="avisos_mais_sete_dias?.length > 0" >
+			<ion-list-header > A MAIS DE SETE DIAS</ion-list-header>
+			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let mais_sete of avisos_mais_mais_sete; let i = index">
+				<ion-avatar item-start>
+					<img src="{{mais_sete.avi_imagem}}">
+				</ion-avatar>
+				<h2>{{mais_sete.avi_assunto}}</h2>
+				<p>{{mais_sete.avi_mensagem}}</p>
+				<ion-note item-end>{{mais_sete.avi_datacadastral}}</ion-note>
+			</button>
+		</ion-list>
+
+	</ion-scroll>
+
+</ion-content>
+

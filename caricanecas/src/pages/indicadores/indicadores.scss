@@ -1,0 +1,32 @@
+page-indicadores {
+	overflow: scroll !important;
+	background: #ffffff;
+}
+
+
+.box-indicador{
+	color: #ffffff;
+	&_icone{
+		margin-top: 10px;
+		float: left;
+		background: #ffffff;
+		color: #ffffff;
+		padding: 20px;
+		ion-icon{
+			//background: green;
+			padding:4px 5px;
+			border-radius: 50%;
+		}
+	}
+
+	&_info{
+		margin-top: 10px;
+		padding:0 20px;
+		float: left;
+		span{
+			display: inline-block;
+			margin-top: 5px;
+			font-size: 30px;
+		}
+	}
+}

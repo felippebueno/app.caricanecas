@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAqB;EACpB,UAAU,EAAE,OAAO",
+"sources": ["avisos-detalhes.scss"],
+"names": [],
+"file": "avisos-detalhes.css"
+}

@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons>
+      <img src="https://www.scp.caricanecas.com.br/public/modules/globais/administrador/img/caricanecas_logo.png" style="display:inline-block" [height]="40"  [width]="100"/>
+    </ion-buttons>
+
+    <button end  ion-button icon-only menuToggle>
+      <ion-icon name="menu" (click)="toggleMenu()"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>
+
+<ion-menu side="right" [content]="mycontent" type="overlay">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title (click)="closeMenu()"> <ion-icon name="menu" style="top: 2px; position: relative;"></ion-icon> Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content style="margin-top: 0px !important;">
+    <ion-list>
+
+      <button icon-end ion-item (click)="logout()" style="color: #24cac3">
+        Sair <ion-icon style="top: 4px; position: relative;" name="exit"></ion-icon>
+      </button>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-tabs>
+  <ion-tab [root]="tab1Root" (ionSelect)="verificaLogin()" tabTitle="Dashboard" tabIcon="home"></ion-tab>
+  <ion-tab [root]="tab2Root" (ionSelect)="verificaLogin()" tabTitle="Indicadores" tabIcon="analytics"></ion-tab>
+  <ion-tab [root]="tab3Root" (ionSelect)="verificaLogin()" tabTitle="Avisos" tabIcon="notifications"></ion-tab>
+</ion-tabs>

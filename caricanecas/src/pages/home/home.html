@@ -1,0 +1,57 @@
+<ion-content style="margin-top: 56px">
+	<ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+			pullingIcon="arrow-dropdown"
+			pullingText="Puxe para atualizar"
+			refreshingSpinner="circles"
+			refreshingText="Estamos atualizando...">
+		</ion-refresher-content>
+	</ion-refresher>
+
+	<ion-grid>
+		<ion-row class="box-padrao" style="border-bottom:1px solid #e7ecf1">
+			<ion-col  padding col-5>
+				<b>Nome</b>
+			</ion-col>
+			<ion-col padding text-center>
+				<span *ngIf="fra_nome">{{fra_nome}}</span>
+			</ion-col>
+		</ion-row>
+
+		<ion-row class="box-padrao" style="border-bottom:1px solid #e7ecf1; background: #e7ecf1">
+			<ion-col  padding col-5>
+				<b>Telefone</b>
+			</ion-col>
+			<ion-col padding text-center>
+				<span *ngIf="fra_telefone1">{{fra_telefone1}}</span>
+			</ion-col>
+		</ion-row>
+
+		<ion-row class="box-padrao" style="border-bottom:1px solid #e7ecf1">
+			<ion-col  padding col-5>
+				<b>E-mail</b>
+			</ion-col>
+			<ion-col padding text-center>
+				<span *ngIf="fra_emails">{{fra_emails}}</span>
+			</ion-col>
+		</ion-row>
+
+		<ion-row class="box-padrao" style="border-bottom:1px solid #e7ecf1; background: #e7ecf1">
+			<ion-col  padding col-5>
+				<b>Último acesso</b>
+			</ion-col>
+			<ion-col padding text-center>
+				<span *ngIf="fra_ultimoacesso">{{fra_ultimoacesso}}</span>
+			</ion-col>
+		</ion-row>
+
+		<ion-row class="box-padrao" style="border-bottom:1px solid #e7ecf1">
+			<ion-col  padding col-5>
+				<b>Quantidade de acessos</b>
+			</ion-col>
+			<ion-col padding text-center>
+				<span *ngIf="fra_acessos">{{fra_acessos}}</span>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>

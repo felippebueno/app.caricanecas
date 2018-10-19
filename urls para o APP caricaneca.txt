@@ -1,0 +1,29 @@
+Tela de login
+Dados: ??
+Urls: http://scp.caricanecas.lirix2.com.br/site/app/login
+Retorno:
+ logado:bool
+fra_usuario:string
+
+
+Grava device
+Dados: ??
+Urls: ??
+Retorno: json [dados do usuário para apresentar na home]
+
+
+Home
+Dados: ??
+Urls: ??
+Retorno: json [dados do usuário para apresentar na home]
+
+
+Indicadores
+Dados: ??
+Urls: ??
+Retorno: json [dados do indicador do usuárioq ue esta logado]
+
+Avisos
+Dados: ??
+Urls: ??
+Retorno: json [todos os avisos enviados.]
