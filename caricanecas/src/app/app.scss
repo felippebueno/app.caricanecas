@@ -14,3 +14,40 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+
+.box-padrao{
+	background: #f8f8f8;
+}
+
+.toolbar-background-md{
+	background: #24cac3;
+}
+
+.bar-button-default-md,.toolbar-title-md{
+	color: #ffffff;
+}
+
+ion-navbar.toolbar{
+	padding-top: 25px;
+}
+
+ion-content{
+	margin-top: 65px !important;
+}
+
+// ajuste na borda do pull refreshs
+.has-refresher  .scroll-content {
+	border-top: 0 !important;
+}
+
+.scroll-page{
+	height: 94% !important;
+	overflow: scroll;
+}
+
+.aling-vertical{
+	height: 100%;
+	justify-content: center;
+}
+

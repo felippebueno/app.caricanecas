@@ -1,58 +1,40 @@
 page-login {
-	background: #ffffff;
-}
+	.item-input{
+		padding-left: 0;
+	}
 
-.aling-vertical{
-	height: 100%;
-	justify-content: center;
-}
+	.box-login{
+		background: #465a65;
+		padding: 20px;
+	}
 
-.scroll-content {
-	display: table !important;
-	width: 100% !important;
-	height: 100% !important;
-	padding: 0 !important;
-}
-.scroll {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
+	.input-login-lirix{
+		background: #526a77;
+		border: 1px solid #718894;
+		color: #ffffff;
+	}
 
-.img-login-lirix{
-	position: absolute;
-	top: -100px;
-	margin: 0 auto;
-	right: 0;
-	left: 0;
-}
+	.label-login-lirix{
+		text-align: left;
+		color: #ffffff;
+		font-size: 14px !important;
+		font-weight: bold;
+		margin-bottom: 5px !important;
+	}
 
-.item-input{
-	padding-left: 0;
-}
+	.btn-login-lirix{
+		margin-top: 20px;
+		color: #FFF;
+		background-color: #26C281;
+		border-color: #26C281;
+	}
 
-.box-login{
-	background: #465a65;
-	padding: 20px;
-}
-
-.input-login-lirix{
-	background: #526a77;
-	border: 1px solid #718894;
-	color: #ffffff;
-}
-
-.label-login-lirix{
-	text-align: left;
-	color: #ffffff;
-	font-size: 14px !important;
-	font-weight: bold;
-	margin-bottom: 5px !important;
-}
-
-.btn-login-lirix{
-	margin-top: 20px;
-	color: #FFF;
-	background-color: #26C281;
-	border-color: #26C281;
+	.img-login-lirix{
+		position: absolute;
+		position: absolute;
+		top: -100px;
+		margin: 0 auto;
+		right: 0;
+		left: 0;
+	}
 }

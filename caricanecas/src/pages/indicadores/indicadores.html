@@ -1,6 +1,5 @@
+<ion-content padding>
 
-<ion-content style="margin-top: 56px; height: 890px">
-<!--<ion-content style="background: url('https://www.scp.caricanecas.com.br/public/modules/globais/franqueado/img/login_bg.gif'); margin-top: 56px; height: 890px">-->
 	<ion-refresher (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content
 			pullingIcon="arrow-dropdown"
@@ -10,31 +9,29 @@
 		</ion-refresher-content>
 	</ion-refresher>
 
-	<ion-scroll scrollY="true" class="scroll-page">
-		<ion-grid>
+	<ion-grid>
+		<!-- indicador   *ngFor="let indicador of indicadores" -->
+		<ion-row class="box-padrao" margin-bottom *ngFor="let indicador of indicadores">
+			<ion-col  padding  [style.background]="indicador.cor" >
 
-			<!-- indicador   *ngFor="let indicador of indicadores" -->
-			<ion-row class="box-padrao" margin-bottom *ngFor="let indicador of indicadores">
-				<ion-col  padding  [style.background]="indicador.cor" >
-
-					<div class="box-indicador">
-						<div class="box-indicador_titulo">
-							<b>{{ indicador.titulo }}</b>
-						</div>
-						<div class="box-indicador_icone">
-							<ion-icon name="{{ indicador.icone }}"  [style.background]="indicador.cor" ></ion-icon>
-						</div>
-						<div class="box-indicador_info">
-							<b>
-								{{ indicador.subtitulo }}<br>
-								<span>{{ indicador.valor }}</span>
-							</b>
-						</div>
+				<div class="box-indicador">
+					<div class="box-indicador_titulo">
+						<b>{{ indicador.titulo }}</b>
 					</div>
+					<div class="box-indicador_icone">
+						<ion-icon name="{{ indicador.icone }}"  [style.background]="indicador.cor" ></ion-icon>
+					</div>
+					<div class="box-indicador_info">
+						<b>
+							{{ indicador.subtitulo }}<br>
+							<span>{{ indicador.valor }}</span>
+						</b>
+					</div>
+				</div>
 
-				</ion-col>
-			</ion-row>
+			</ion-col>
+		</ion-row>
 
-		</ion-grid>
-	</ion-scroll>
+	</ion-grid>
+
 </ion-content>

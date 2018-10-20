@@ -27,11 +27,8 @@ export class HomePage {
     }
 
 	ionViewDidLoad() {
-        console.info("HOME")
         if(localStorage.getItem("user_data")){
-            console.info("tem user_data")
             this.user_data = JSON.parse(localStorage.getItem("user_data"))
-            console.info(this.user_data);
 
             //POST
             let postData = new FormData();
@@ -84,8 +81,10 @@ export class HomePage {
 	 * @param refresher
 	 */
 	doRefresh(refresher) {
-		this.ionViewDidLoad()
-		refresher.complete();
+		setTimeout(() => {
+			this.ionViewDidLoad()
+			refresher.complete();
+		}, 3000);
 	}
 }
 

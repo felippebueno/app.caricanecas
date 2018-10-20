@@ -2,27 +2,3 @@ page-home {
 	background: #ffffff;
 }
 
-.box-padrao{
-	background: #f8f8f8;
-}
-
-.toolbar-background-md{
-	background: #24cac3;
-}
-.bar-button-default-md,.toolbar-title-md{
-	color: #ffffff;
-}
-
-ion-navbar.toolbar{
-	padding-top: 15px;
-}
-
-ion-content{
-	margin-top: 68px !important;
-}
-
-// ajuste na borda do pull refreshs
-.has-refresher  .scroll-content {
-	border-top: 0 !important;
-	margin-top: -5px;
-}

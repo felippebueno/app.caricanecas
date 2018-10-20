@@ -6,10 +6,14 @@ import { IndicadoresPage} from "../indicadores/indicadores";
 import { AvisosPage} from "../avisos/avisos";
 import { LoginPage} from "../login/login";
 import {Http} from "@angular/http";
+import {SplashScreen} from "@ionic-native/splash-screen";
 
 @Component({
   templateUrl: 'tabs.html'
 })
+
+
+
 export class TabsPage {
 
     tab1Root = HomePage;
@@ -17,9 +21,11 @@ export class TabsPage {
     tab3Root = AvisosPage;
     user_data;
 
-    constructor(public menuCtrl: MenuController,public navCtrl: NavController, public http: Http) {
+    constructor(public menuCtrl: MenuController,public navCtrl: NavController, public http: Http, public splashScreen: SplashScreen) {
+	    if(!localStorage.getItem("user_data")){
+		    this.navCtrl.setRoot(LoginPage);
+	    }
     }
-
     // funçoões menu
     openMenu() {
         this.menuCtrl.open();
@@ -41,9 +47,11 @@ export class TabsPage {
         this.navCtrl.setRoot(LoginPage);
     }
 
-    verificaLogin() {
-        console.info("verifica login");
-
+	/**
+     * Verofoca se o dispositivo esta autorizado.
+	 */
+	verificaLogin() {
+        //console.info("verifica login");
         if(localStorage.getItem("user_data")){
             this.user_data = JSON.parse(localStorage.getItem("user_data"))
 
@@ -74,6 +82,4 @@ export class TabsPage {
             this.navCtrl.push(LoginPage)
         }
     }
-
-
 }

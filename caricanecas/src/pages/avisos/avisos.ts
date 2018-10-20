@@ -21,7 +21,7 @@ export class AvisosPage {
     avisos_hoje             = []; // Hoje.
     avisos_ontem            = []; // Ontem.
     avisos_sete_dias        = []; // Últimos 7 dias.
-    avisos_mais_sete_dias = []; // A mais de 7 dias.
+    avisos_mais_sete_dias   = []; // A mais de 7 dias.
 
 /*
 *
@@ -39,7 +39,6 @@ export class AvisosPage {
 
     ionViewDidLoad() {
         this.user_data = JSON.parse(localStorage.getItem("user_data"))
-        console.log(this.user_data);
 
         //POST
         let postData = new FormData();
@@ -62,11 +61,6 @@ export class AvisosPage {
                 this.avisos_ontem               = res.data.avisos[1]
                 this.avisos_sete_dias           = res.data.avisos[2]
                 this.avisos_mais_sete_dias      = res.data.avisos[3]
-
-                console.info(this.avisos_hoje)
-                console.info(this.avisos_ontem)
-                console.info(this.avisos_sete_dias)
-                console.info(this.avisos_mais_sete_dias)
             }
 
 
@@ -88,8 +82,11 @@ export class AvisosPage {
 		//this.ionViewDidLoad();
 	}
 
+
 	doRefresh(refresher) {
-		this.ionViewDidLoad()
-		refresher.complete();
+		setTimeout(() => {
+			this.ionViewDidLoad()
+			refresher.complete();
+		}, 3000);
 	}
 }

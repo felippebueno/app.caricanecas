@@ -25,32 +25,30 @@ export class IndicadoresPage {
     }
 
     ionViewDidLoad(){
+	    this.user_data = JSON.parse(localStorage.getItem("user_data"))
 
-    this.user_data = JSON.parse(localStorage.getItem("user_data"))
-    console.log(this.user_data);
+	    //POST
+	    let postData = new FormData();
+	    postData.append('appkey', '7939518B-08C27B79-BFB41B80-6F654F40');
+	    postData.append('data', JSON.stringify({
+	      "dev_hash": this.user_data.device_id,
+	    }));
 
-    //POST
-    let postData = new FormData();
-    postData.append('appkey', '7939518B-08C27B79-BFB41B80-6F654F40');
-    postData.append('data', JSON.stringify({
-      "dev_hash": this.user_data.device_id,
-    }));
+	    let url_p = 'https://www.scp.caricanecas.com.br/site/app/indicadores'
+	    this.http.post(url_p,postData)
+	    .map((res: any) => res.json())
+	    .subscribe(res => {
+	      // verifica se o device esta cadastrado caso não redireciona para o login
+	      if(res.erro.status){
+	          localStorage.removeItem("user_data");
+	          //this.navCtrl.setRoot(LoginPage);
+	          this.navCtrl.push(LoginPage)
 
-    let url_p = 'https://www.scp.caricanecas.com.br/site/app/indicadores'
-    this.http.post(url_p,postData)
-    .map((res: any) => res.json())
-    .subscribe(res => {
-      // verifica se o device esta cadastrado caso não redireciona para o login
-      if(res.erro.status){
-          localStorage.removeItem("user_data");
-          //this.navCtrl.setRoot(LoginPage);
-          this.navCtrl.push(LoginPage)
+	      }else{
+	        this.indicadores = res.data.indicadores
+	      }
 
-      }else{
-        this.indicadores = res.data.indicadores
-      }
-
-    });
+	    });
     }
 
 	/**
@@ -67,9 +65,11 @@ export class IndicadoresPage {
 	 * @param refresher
 	 */
 	doRefresh(refresher) {
-		this.ionViewDidLoad()
+		setTimeout(() => {
+			this.ionViewDidLoad()
+			refresher.complete();
+		}, 3000);
 		//this.indicadores =  this.indicadores;
-		refresher.complete();
 	}
 
 }
