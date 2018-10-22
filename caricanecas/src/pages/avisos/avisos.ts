@@ -52,6 +52,7 @@ export class AvisosPage {
         .map((res: any) => res.json())
         .subscribe(res => {
             //verifica se o device esta cadastrado caso não redireciona para o login
+	        console.info(res)
             if(res.erro.status){
                 localStorage.removeItem("user_data");
                 this.navCtrl.push(LoginPage)
@@ -62,8 +63,6 @@ export class AvisosPage {
                 this.avisos_sete_dias           = res.data.avisos[2]
                 this.avisos_mais_sete_dias      = res.data.avisos[3]
             }
-
-
         });
     }
 
@@ -87,6 +86,6 @@ export class AvisosPage {
 		setTimeout(() => {
 			this.ionViewDidLoad()
 			refresher.complete();
-		}, 3000);
+		}, 2000);
 	}
 }

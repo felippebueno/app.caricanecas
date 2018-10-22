@@ -2,23 +2,22 @@
 
 	<ion-refresher (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content
-			pullingIcon="arrow-dropdown"
-			pullingText="Puxe para atualizar"
 			refreshingSpinner="circles"
-			refreshingText="Estamos atualizando...">
+			pullMax="120"
+			pullMin="120"
+		>
 		</ion-refresher-content>
 	</ion-refresher>
 
 	<ion-grid>
 		<!-- indicador   *ngFor="let indicador of indicadores" -->
-		<ion-row class="box-padrao" margin-bottom *ngFor="let indicador of indicadores">
+		<ion-row class="no-margin-last" margin-bottom *ngFor="let indicador of indicadores">
 			<ion-col  padding  [style.background]="indicador.cor" >
-
 				<div class="box-indicador">
 					<div class="box-indicador_titulo">
 						<b>{{ indicador.titulo }}</b>
 					</div>
-					<div class="box-indicador_icone">
+					<div class="box-indicador_icone ">
 						<ion-icon name="{{ indicador.icone }}"  [style.background]="indicador.cor" ></ion-icon>
 					</div>
 					<div class="box-indicador_info">

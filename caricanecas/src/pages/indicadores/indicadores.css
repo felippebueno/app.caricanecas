@@ -10,8 +10,11 @@ page-indicadores {
       color: #ffffff;
       padding: 20px; }
       page-indicadores .box-indicador_icone ion-icon {
-        padding: 4px 5px;
-        border-radius: 50%; }
+        padding: 5px;
+        border-radius: 50%;
+        height: 25px;
+        min-width: 25px;
+        text-align: center; }
     page-indicadores .box-indicador_info {
       margin-top: 10px;
       padding: 0 20px;
@@ -20,5 +23,7 @@ page-indicadores {
         display: inline-block;
         margin-top: 5px;
         font-size: 30px; }
+  page-indicadores .no-margin-last:last-child {
+    margin-bottom: 0px !important; }
 
 /*# sourceMappingURL=indicadores.css.map */

@@ -11,9 +11,11 @@ page-indicadores {
 			color: #ffffff;
 			padding: 20px;
 			ion-icon{
-				//background: green;
-				padding:4px 5px;
+				padding: 5px;
 				border-radius: 50%;
+				height: 25px;
+				min-width: 25px;
+				text-align: center;
 			}
 		}
 
@@ -26,6 +28,13 @@ page-indicadores {
 				margin-top: 5px;
 				font-size: 30px;
 			}
+		}
+	}
+
+	.no-margin-last{
+		&:last-child {
+			margin-bottom: 0px !important;
+
 		}
 	}
 }

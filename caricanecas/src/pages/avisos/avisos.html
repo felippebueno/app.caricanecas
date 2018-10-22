@@ -2,16 +2,16 @@
 	<!--<ion-content style="background: url('https://www.scp.caricanecas.com.br/public/modules/globais/franqueado/img/login_bg.gif'); margin-top: 56px; height: 890px">  class="list-avatar-page" -->
 	<ion-refresher (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content
-			pullingIcon="arrow-dropdown"
-			pullingText="Puxe para atualizar"
 			refreshingSpinner="circles"
-			refreshingText="Estamos atualizando...">
+			pullMax="120"
+			pullMin="120"
+		>
 		</ion-refresher-content>
 	</ion-refresher>
 
 	<!-- HOJE -->
 	<div margin-top>
-		<ion-list *ngIf="avisos_hoje?.length > 0" >
+		<ion-list *ngIf="avisos_hoje?.length > 0">
 			<ion-list-header > HOJE</ion-list-header>
 			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let hoje of avisos_hoje; let i = index">
 				<ion-avatar item-start>
@@ -24,7 +24,7 @@
 		</ion-list>
 
 		<!-- ONTEM -->
-		<ion-list *ngIf="avisos_ontem?.length > 0" >
+		<ion-list *ngIf="avisos_ontem?.length > 0">
 			<ion-list-header > ONTEM</ion-list-header>
 
 			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let ontem of avisos_ontem; let i = index">
@@ -39,7 +39,7 @@
 		</ion-list>
 
 		<!-- ÚLTIMOS SETE DIAS -->
-		<ion-list *ngIf="avisos_sete_dias?.length > 0" >
+		<ion-list *ngIf="avisos_sete_dias?.length > 0">
 			<ion-list-header > ÚLTIMOS SETE DIAS</ion-list-header>
 
 			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let sete_dias of avisos_sete_dias; let i = index">
@@ -53,9 +53,9 @@
 		</ion-list>
 
 		<!-- A MAIS DE SETE DIAS -->
-		<ion-list *ngIf="avisos_mais_sete_dias?.length > 0" >
+		<ion-list *ngIf="avisos_mais_sete_dias?.length > 0">
 			<ion-list-header > A MAIS DE SETE DIAS</ion-list-header>
-			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let mais_sete of avisos_mais_mais_sete; let i = index">
+			<button ion-item (click)="openNavDetailsPage(hoje)" *ngFor="let mais_sete of avisos_mais_sete_dias; let i = index">
 				<ion-avatar item-start>
 					<img src="{{mais_sete.avi_imagem}}">
 				</ion-avatar>

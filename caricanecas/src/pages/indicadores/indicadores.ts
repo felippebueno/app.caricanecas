@@ -68,7 +68,7 @@ export class IndicadoresPage {
 		setTimeout(() => {
 			this.ionViewDidLoad()
 			refresher.complete();
-		}, 3000);
+		}, 2000);
 		//this.indicadores =  this.indicadores;
 	}
 

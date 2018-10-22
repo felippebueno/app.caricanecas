@@ -26,7 +26,8 @@ export class HomePage {
     constructor(public http: Http,public navCtrl: NavController){
     }
 
-	ionViewDidLoad() {
+	//ionViewDidLoad() {
+	ngOnInit() {
         if(localStorage.getItem("user_data")){
             this.user_data = JSON.parse(localStorage.getItem("user_data"))
 
@@ -57,15 +58,8 @@ export class HomePage {
                     this.fra_tipo          = res.data.fra_tipo;
                     this.fra_ultimoacesso  = res.data.fra_ultimoacesso;
                 }
-
-
             });
         }
-
-    }
-
-    otherFunctionHome(){
-        console.info("otherFunctionHome")
     }
 
 	/**
@@ -81,10 +75,13 @@ export class HomePage {
 	 * @param refresher
 	 */
 	doRefresh(refresher) {
+		console.info(refresher.currentY);
+		console.info(refresher.deltaY);
+
 		setTimeout(() => {
-			this.ionViewDidLoad()
+			this.ngOnInit()
 			refresher.complete();
-		}, 3000);
+		}, 2000);
 	}
 }
 

@@ -1,10 +1,10 @@
 <ion-content padding>
 	<ion-refresher (ionRefresh)="doRefresh($event)">
 		<ion-refresher-content
-			pullingIcon="arrow-dropdown"
-			pullingText="Puxe para atualizar"
 			refreshingSpinner="circles"
-			refreshingText="Estamos atualizando...">
+			pullMax="120"
+			pullMin="120"
+		>
 		</ion-refresher-content>
 	</ion-refresher>
 
