@@ -32,18 +32,19 @@ export class LoginPage {
     ionViewDidLoad() {
         //Pega o device ID
         this.oneSignal.startInit(this.appid, this.googleProjectNumber);
+	    this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
         this.oneSignal.getIds()
         .then(ids => {
-            //this.device_id =  JSON.stringify(ids.userId)
             this.device_id   =  ids.userId
         });
         this.oneSignal.endInit();
-        this.configurePushNotification()
+        //this.configurePushNotification()
 
     }
 
     login(){
-
+        alert("asd")
+        alert(this.device_id)
         let postData = new FormData();
         postData.append('appkey', '7939518B-08C27B79-BFB41B80-6F654F40');
         postData.append('data', JSON.stringify({
@@ -95,16 +96,17 @@ export class LoginPage {
         this.oneSignal.startInit(this.appid, this.googleProjectNumber);
 
         this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
+	    this.oneSignal.setEmail("suporte@lirix.com.br")
 
-        // faz algo quando a notificação é recebida
-        this.oneSignal.handleNotificationReceived().subscribe((data) => {
-            //code
-        });
-
-        // faz algo quando uma notificação é aberta
-        this.oneSignal.handleNotificationOpened().subscribe((data) => {
-            //code
-        });
+        // // faz algo quando a notificação é recebida
+        // this.oneSignal.handleNotificationReceived().subscribe((data) => {
+        //     //code
+        // });
+        //
+        // // faz algo quando uma notificação é aberta
+        // this.oneSignal.handleNotificationOpened().subscribe((data) => {
+        //     //code
+        // });
 
         this.oneSignal.endInit();
 
